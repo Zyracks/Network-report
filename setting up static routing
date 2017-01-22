@@ -1,0 +1,13 @@
+
+
+setting up static routing
+with one hop (from one router to the next)
+
+[edit routing-options]
+set static route (destination ip-add.) next-hop (through ip-add.)
+
+setting up default router
+routing all trafic one way
+
+[edit routing-options]
+set static route 0.0.0.0/0 next-hop (through ip-add.)
