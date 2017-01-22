@@ -1,0 +1,19 @@
+
+setting up dhcp
+
+[edit]
+set system service dhcp [enter]
+
+[edit system service dhcp]
+set dhcp pool ip-add range .0/24 address-range low "ip-add range .100" high "ip-add range .200"
+set router "ip-add range .1
+Set maximum-lease-time 3600
+Set name-server 8.8.8.8
+commit
+
+
+you might alow the service if you have not used system-services all
+
+[edit security zones security-zone trust]
+Set interfaces ge-0/0/x host-inbound-traffic system-services dhcp
+commit
