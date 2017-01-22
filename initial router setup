@@ -1,0 +1,23 @@
+
+Starting up router
+
+root@%  cli  [enter]
+you a now in command line interface
+
+root@> edit or config
+you a now in configuration mode
+
+[edit]
+root@#
+
+[edit system root-authentication]
+root@# set plain-text-password [enter]
+New password : "the password" [enter]
+Retype new password : "the password" [enter]
+
+set hoste name
+[edit]
+root@# set system host-name "name" [enter]
+
+[edit]
+root@# commit  [enter]
