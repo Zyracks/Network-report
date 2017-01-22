@@ -1,0 +1,19 @@
+
+setting up interfaces and security Zone's
+
+[edit]
+root@xx# edit interfaces 
+
+[edit interfaces]
+root@xx# set ge-0/0/0 unit 0 family inet address (ip add./24) [enter]
+for all interfacess
+
+
+[edit security zones security-zone trust]
+set interface ge-0/0/0 host-inbound-traffic system-services all
+set interface ge-0/0/0 host-inbound-traffic protocols all
+
+the same for all zones trust untrust DMZ osv.
+this project is not to look at securety that is why all!
+
+set up alle interfacess
