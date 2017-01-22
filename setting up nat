@@ -1,0 +1,26 @@
+
+
+ setting up Nat
+( port forvarding )
+
+[edit security nat source]
+set rule-set nat from zone trust
+set rule-set nat to zone untrust
+set rule-set nat rule r1 match source-address 0.0.0.0/0
+set rule-set nat rule r1 match destination-address 0.0.0.0/0
+set rule-set nat rule r1 then sourse-nat interface
+commit
+
+
+[edit security policies from-zone trust to-zone trust]
+set policy default-permit match source-address any destination-address any application any
+set policy default-permit then permit
+
+[edit security policies from-zone trust to-zone untrust]
+set policy default-permit match source-address any destination-address any application any
+set policy default-permit then permit
+
+[edit security policies from-zone untrust to-zone trust]
+set policy default-deny match source-address any destination-address any application any
+set policy default-deny then deny
+commit
